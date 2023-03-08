@@ -5,6 +5,7 @@ __pycache__/
 
 # C extensions
 *.so
+.DS_Store
 
 # Distribution / packaging
 .Python
@@ -93,7 +94,8 @@ ipython_config.py
 
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow
 __pypackages__/
-
+.ipynb_checkpoints
+src/.ipynb_checkpoints
 # Celery stuff
 celerybeat-schedule
 celerybeat.pid
