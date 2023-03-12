@@ -53,6 +53,7 @@ available
 away
 awfully
 b
+bargain
 be
 became
 because
@@ -107,6 +108,7 @@ couldn't
 course
 currently
 d
+daily
 definitely
 described
 despite
@@ -121,6 +123,7 @@ don't
 done
 down
 downwards
+dr
 during
 e
 each
@@ -147,6 +150,7 @@ exactly
 example
 except
 f
+factory
 far
 few
 fifth
@@ -187,6 +191,8 @@ have
 haven't
 having
 he
+headline
+headlines
 he's
 hello
 help
@@ -276,6 +282,7 @@ mean
 meanwhile
 merely
 might
+mr
 more
 moreover
 most
@@ -315,6 +322,8 @@ o
 obviously
 of
 off
+official
+officials
 often
 oh
 ok
@@ -342,6 +351,7 @@ own
 p
 particular
 particularly
+people
 per
 perhaps
 placed
@@ -423,6 +433,9 @@ take
 taken
 tell
 tends
+test
+tests
+testing
 th
 than
 thank
@@ -500,6 +513,8 @@ value
 various
 very
 via
+video
+videos
 viz
 vs
 w
@@ -556,6 +571,7 @@ would
 wouldn't
 x
 y
+year
 yes
 yet
 you
