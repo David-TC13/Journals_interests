@@ -46,8 +46,10 @@ def keyword(word,no_news):
     driver.get(url)
     
     time.sleep(3)
-    cookies_button = driver.find_element(By.ID, 'onetrust-accept-btn-handler').click()
-    
+    try:
+        cookies_button = driver.find_element(By.ID, 'onetrust-accept-btn-handler').click()
+    except:
+        pass
     time.sleep(3)
     search_button = driver.find_element(By.XPATH, "//button[@tabindex='-1']").click()
     search_bar  = driver.find_element(By.ID, 'header-search-bar')

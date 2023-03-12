@@ -39,9 +39,11 @@ def keyword(word,no_news):
     driver = webdriver.Chrome()
     driver.get(url)
     time.sleep(5)
-    cookies_accept = driver.find_element(By.CLASS_NAME, 'fc-button').click()
-    cookies_2= driver.find_element(By.CLASS_NAME, 'banner-button').click()
-    
+    try:
+        cookies_accept = driver.find_element(By.CLASS_NAME, 'fc-button').click()
+        cookies_2= driver.find_element(By.CLASS_NAME, 'banner-button').click()
+    except:
+        pass
     
     time.sleep(3)
     search_bar  = driver.find_element(By.LINK_TEXT, 'Search BBC').click()
