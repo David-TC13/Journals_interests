@@ -1,3 +1,4 @@
+bbc
 accounthomenewssportreelworklifetravelfuturemore
 bbchomenewssportreelworklifetravelfutureculturemusictvweathersoundsclose
 ukrainecoronavirusclimatevideoworldukbusinesstechsciencemorestoriesentertainment
@@ -7,6 +8,17 @@ menumore
 newsbbc
 told
 helpyour
+javascript
+
+cnn
+tv
+ad
+settingslog
+feedback
+cnnvideo
+inmy
+opinion
+accountlog
 
 
 a

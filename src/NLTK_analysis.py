@@ -15,7 +15,8 @@ import nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from collections import Counter
-
+from textblob import TextBlob
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 # In[2]:
 
@@ -38,6 +39,7 @@ def preprocess(df_raw):
 
         cleaned_words = []
 
+
         for word in words:
             if word not in stop_words:
                 cleaned_words.append(word)
@@ -52,20 +54,28 @@ def preprocess(df_raw):
         words = [word.lower() for word in tokens if word.isalpha() and word.lower() not in stop_words]
         word_freq = Counter(words)
         sorted_words = sorted(word_freq.items(), key=lambda x: x[1], reverse=True)
-        
-        dict_word = {}
-        for word, freq in sorted_words[:100]:
-            dict_word[word] = freq
-        dict_words[i] = dict_word
-    df_words=pd.DataFrame(dict_words)
 
-    df_words= df_words.transpose()
+        list_word = []
+        for word, freq in sorted_words[:20]:
+            list_word.append(word)
+        dict_word={'word':list_word}
+
+        dict_words[i] = dict_word
+
+
+    df_words=pd.DataFrame(dict_words).T
+    df_proc=pd.merge(df_raw,df_words, left_index=True,  right_index=True)
     
-    sums = df_words.sum(axis=0).sort_values(ascending=False)
-    df_words = df_words[sums.index]
-    
-    df_words= df_words.iloc[:, :20]
-    df_together=pd.merge(df_raw,df_words, left_index=True,  right_index=True)
+    list_subj=[]
+    for raw in df_raw['article']:
+        blob = TextBlob(raw)
+        subj = blob.sentiment.subjectivity
+        list_subj.append(subj)
+    dict_subj={'subjetivity':list_subj}
+
+    df_subj=pd.DataFrame(dict_subj)
+    df_together=pd.merge(df_proc,df_subj, left_index=True,  right_index=True)
+
     return df_together
 
 
