@@ -12,6 +12,7 @@ javascript
 tweet
 russian
 chinese
+ukranian
 
 cnn
 cnnvideo
@@ -33,6 +34,9 @@ dec
 march
 uk
 playing
+
+rt
+percent
 
 
 a
