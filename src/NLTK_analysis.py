@@ -20,8 +20,9 @@ from collections import Counter
 # In[2]:
 
 
-def preprocess(raw_list):
-    cleaned_text_list = []
+def preprocess(df_raw):
+    raw_list= df_raw['article']
+    list_text = []
     
     stop_words_file = 'english.txt'
     stop_words = []
@@ -41,15 +42,7 @@ def preprocess(raw_list):
             if word not in stop_words:
                 cleaned_words.append(word)
         cleaned_text = " ".join(cleaned_words)
-        cleaned_text_list.append(cleaned_text)
-
-    return cleaned_text_list
-
-
-# In[3]:
-
-
-def fwords(list_text, df_raw):
+        list_text.append(cleaned_text)
 
     dict_words = {}
 
@@ -61,7 +54,7 @@ def fwords(list_text, df_raw):
         sorted_words = sorted(word_freq.items(), key=lambda x: x[1], reverse=True)
         
         dict_word = {}
-        for word, freq in sorted_words[:5]:
+        for word, freq in sorted_words[:100]:
             dict_word[word] = freq
         dict_words[i] = dict_word
     df_words=pd.DataFrame(dict_words)
