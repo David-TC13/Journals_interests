@@ -13,6 +13,9 @@ tweet
 russian
 chinese
 ukranian
+topicrussia
+topicsrussia
+december
 
 cnn
 cnnvideo

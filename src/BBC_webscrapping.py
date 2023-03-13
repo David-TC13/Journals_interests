@@ -35,6 +35,10 @@ from textblob import TextBlob
 
 
 def keyword(word,no_news):
+    
+    """Because of the specific code to do BBC website, a function is implemented to, first, start the browser and open the bbc website for, after accepting the cookies and using the search bar placed in it to search the word introduced in the function with Selenium. Because of the use of a VPN, the cookies might not be required to accept, so, for this reason it's used a try and except method to avoid errors if, depending on the region of the VPN; on the other side, it's used a while loop which includes to get all the elements which tag is 'a' and attribute 'href', to get all the url links of the list of news; to be sure that it's downloaded just news it's a pplied an if method which has to include 'news' in the url and not 'help' or 'live'. Once it's got the proper url this one is saved in a list out of the loop and it's extracted the title, the content and the date split in day, month and year with Beautifulsoup and saved in a dictionary with key the name of the column and the value the content. During the while, it's also introduced another Selenium method with a try and except, so, if the condition is not met, which is the number of news required and introduced within the function call, it will try to click in 'next page' to continue downloading, if the number is not met and there's no more 'next page' tag, means that the website finished all the results and it didn't download all the content required, so, it's stopped the while to continue performing the dictionary and setting up the DF.
+It's also to include in the description the use of selenium to scroll down on the website until finding the button 'next page' to continue downloading content."""
+    
     url='https://www.bbc.com/news'
     driver = webdriver.Chrome()
     driver.get(url)
