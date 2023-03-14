@@ -90,8 +90,12 @@ def preprocess(df_raw):
     df_together['date']=df_together['day'].astype(str)+'/'+df_together['month'].astype(str)+'/'+df_together['year'].astype(str)
     return df_together
 
-# In[ ]:
+# In[3]:
 
+def add_column(df,name,string):
+    """ With this function is created a new column with the dataframe selected and introduce the source as string to then be easier the visualisation"""
+    df[name]= string
+    return df
 
 
 
