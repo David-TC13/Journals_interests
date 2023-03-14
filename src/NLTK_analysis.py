@@ -87,6 +87,7 @@ def preprocess(df_raw):
 
     df_polar=pd.DataFrame(dict_polar)
     df_together=pd.merge(df_proc,df_polar, left_index=True,  right_index=True)
+    
     df_together['date']=df_together['day'].astype(str)+'/'+df_together['month'].astype(str)+'/'+df_together['year'].astype(str)
     return df_together
 

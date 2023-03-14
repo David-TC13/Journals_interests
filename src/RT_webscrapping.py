@@ -102,10 +102,10 @@ def keyword(word,no_news):
 
         dict_={'title':list_title,
                 'article': art_list,
-                'link': lst_link,            
-                'year' : year_list,
+                'link': lst_link,
+                'day': day_list,
                 'month': month_list,
-                'day': day_list
+                'year' : year_list
                 }
         df= pd.DataFrame(dict_)
         month_map = {
