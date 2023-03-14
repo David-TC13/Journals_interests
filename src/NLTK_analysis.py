@@ -104,7 +104,8 @@ def list_words(df):
     """This function returns the column word from the DF as a new DF which gonna return a single column with all the words to be used after for visualisation""" 
     lists_wds=df['word'].tolist()
     lst_wd=[j for i in lists_wds for j in i]
-    df_words= pd.DataFrame(lst_wd)
+    dict_wd={'word':lst_wd}
+    df_words= pd.DataFrame(dict_wd)
     return df_words
 
 
