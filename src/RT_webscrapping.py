@@ -37,8 +37,7 @@ from textblob import TextBlob
 
 def keyword(word,no_news):
 
-"""Because of the specific code to do rt website, a function is implemented to, first, start the browser and open their website for, after accepting the cookies and using the search bar placed in it to search the word introduced in the function with Selenium. It's important to remark the fact of the need of using a VPN to get access outside Europe because of the sanctions imposed by the UE; on the other side, it's used a while loop which includes to get all the elements which tag is 'a' and attribute 'href', to get all the url links of the list of news; to be sure that it's downloaded just news it's applied an if method which has to include 'https://www.rt.com/news/5' in the url. Once it's got the proper url this one is saved in a list out of the loop and it's extracted the title, the content(cleaned of specialk characters) and the date split in day, month and year with Beautifulsoup and saved in a dictionary with key the name of the column and the value the content. During the while, it's also introduced another Selenium method with a try and except, so, if the condition is not met, which can be a news without a proper date format, there's no 'more' button (which means the search in the website finished), or, the length of the list of news is not reach, pass.
-It's also to include in the description the use of selenium to scroll down on the website until finding the button 'more' to continue downloading content."""
+    """Because of the specific code to do CNN website, a function is implemented to, first, start the browser and open the cnn website for, after accepting the cookies and using the search bar placed in it to search the word introduced in the function with Selenium. Because of the use of a VPN, the cookies might not be required to accept, so, for this reason it's used a try and except method to avoid errors, depending on the region of the VPN; on the other side, it's used a while loop which includes to get all the elements which tag is 'a' and attribute 'href', to get all the url links of the list of news; to be sure that it's downloaded just news it's applied an if method which has to include 'https://www.cnn.com/202' in the url. Once it's got the proper url this one is saved in a list out of the loop and it's extracted the title, the content and the date split in day, month and year with Beautifulsoup and saved in a dictionary with key the name of the column and the value the content. During the while, it's also introduced another Selenium method with a try and except, so, if the condition is not met, which can be a news without a proper date format, there's no 'more' button (which means the search in the website finished), or, the length of the list of news is not reach, pass.It's also to include in the description the use of selenium to scroll down on the website until finding the button 'more' to continue downloading content."""
     
 
     url = 'https://www.rt.com'
@@ -84,7 +83,7 @@ It's also to include in the description the use of selenium to scroll down on th
             day_list=[]
             month_list=[]
             year_list=[]
-            year_control=[]
+
 
             for soup in list_soup:
                 date_str = soup.find('span', {'class': 'date'}).text.strip()
@@ -109,6 +108,20 @@ It's also to include in the description the use of selenium to scroll down on th
                 'day': day_list
                 }
         df= pd.DataFrame(dict_)
+        month_map = {
+            'Jan': 1,
+            'Feb': 2,
+            'Mar': 3,
+            'Apr': 4,
+            'May': 5,
+            'Jun': 6,
+            'Jul': 7,
+            'Aug': 8,
+            'Sep': 9,
+            'Oct': 10,
+            'Nov': 11,
+            'Dec': 12 }
+        df['month'] = df['month'].map(month_map)
         driver.close()
         return df
     

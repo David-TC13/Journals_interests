@@ -22,9 +22,8 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 
 def preprocess(df_raw):
-    
-    """ With this function, first of all needs to get a data frame and, also needs to import our personalised stopwords file which it's going to be used as a reference to analyse the key words. Once this first filter is applied, the second part gonna be to include the first 20 most used words in a list, to the reference it as a value in a dictionary for finally create a dataframe to merge with the original one. The result of it gonna be a new column called 'word' and each row is going to contain a list with those words. On the other side, it's going to include the polarity and the subjectivity in the same way: it's going to obtain the sentimental analysis (Subjectivity first and after the polarity) from each article and attach it in a new column on the DF, as a result of a dictionary with the key the name of the column and the value the list of values."""
-    
+    """ With this function, first of all needs to get a data frame and, also needs to import our personalised stopwords file which it's going to be used as a reference to analyse the key words. Once this first filter is applied, the second part gonna be to include the first 20 most used words in a list, to the reference it as a value in a dictionary for finally create a dataframe to merge with the original one. The result of it gonna be a new column called 'word' and each row is going to contain a list with those words. On the other side, it's going to include the polarity and the subjectivity in the same way: it's going to obtain the sentimental analysis (Subjectivity first and after the polarity) from each article and attach it in a new column on the DF, as a result of a dictionary with the key the name of the column and the value the list of values. At the end, for a future usage in the visualisation, it's created a new column with the full date separate by the character /."""   
+
     raw_list= df_raw['article']
     list_text = []
     
@@ -88,7 +87,7 @@ def preprocess(df_raw):
 
     df_polar=pd.DataFrame(dict_polar)
     df_together=pd.merge(df_proc,df_polar, left_index=True,  right_index=True)
-
+    df_together['date']=df_together['day'].astype(str)+'/'+df_together['month'].astype(str)+'/'+df_together['year'].astype(str)
     return df_together
 
 # In[ ]:
