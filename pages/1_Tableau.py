@@ -10,7 +10,9 @@ import numpy as np
 from PIL import Image
 
 
-st.title('Graphs')
+st.title('Tableau Graphs')
+st.write("""Here it would be found all the graphs related with the analysis done, which includes averages of subjetivity and polarity, also the max and min value of them,
+the amount of articles published by agency, and also by topic, to finish analysing the top 50 words overall and by blocs( western and eastern)""")
 
 def main():
     html_temp = """<div class='tableauPlaceholder' id='viz1678892045277' style='position: relative'>
