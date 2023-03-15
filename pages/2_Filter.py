@@ -23,9 +23,8 @@ df=pd.read_csv('data/dfcomplete.csv')
 year = st.selectbox('year', df['year'].unique())
 month = st.selectbox('month', df['month'].unique())
 day = st.selectbox('day', df['day'].unique())
+df2 = df[(df['year'] == year) & (df['month'] == month) & (df['day'] == day) ]
+title= st.selectbox('Title', df2['title'])
+df3= df2[df2['title']==title]
 
-df2 = df[(df['year'] == year) & (df['month'] == month) & (df['day'] == day)]
-
-df2= df2.loc[:,['title','source','topic','subjetivity','polarity','word','link']]
-st.write(df2)
-
+st.write(df3.loc[:,['article','source','topic','subjetivity','polarity','word','link']])
