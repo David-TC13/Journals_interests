@@ -13,7 +13,7 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 from datetime import datetime
 
-import googletrans
+
 
 import requests
 from bs4 import BeautifulSoup
@@ -21,15 +21,6 @@ import re as re
 import time
 import pandas as pd
 import numpy as np
-
-
-import nltk
-from nltk.sentiment.vader import SentimentIntensityAnalyzer
-from nltk.corpus import stopwords
-
-from wordcloud import WordCloud
-from langdetect import detect
-from textblob import TextBlob
 
 
 # In[2]:
