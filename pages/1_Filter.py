@@ -26,6 +26,6 @@ day = st.selectbox('day', df['day'].unique())
 
 df2 = df[(df['year'] == year) & (df['month'] == month) & (df['day'] == day)]
 
-df3= df2.loc[:,['title','source','topic','subjetivity','polarity','word',]]
+df3= df2.loc[:,['title','source','topic','subjetivity','polarity','word','link']]
 st.write(df3)
 
