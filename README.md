@@ -1,1 +1,1 @@
-# Journals_interests
+# Is any geopolitical influence on the press we read around the globe?
