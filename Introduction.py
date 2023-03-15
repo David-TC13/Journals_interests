@@ -16,9 +16,24 @@ image = Image.open('pics/wordcloud_press.png')
 st.image(image, caption='wordcloud shaped as reporter')
 
 st.write('## Introduction')
-st.write('-History:')
-st.write('')
-st.write(', Geopolitics, journalism ')
+st.write('''After the second world war, the world ended up split into two main blocks; after falling the "Nazi Empire", the world was divided by the Allies in two blocs:
+         on one side, the Western bloc which included USA, UK , and, on the other side the Eastern bloc which included most of the communist countries at the time.
+         ''')
+st.write('''Just after this division,particulary noted in the city of Berlin, the tensions were raised in between both blocs; the creation of the NATO as a containment for 
+the Soviet influence is considered the starting point of what was called the Cold War; as counterpart, the URSS created the Warsaw Pact in order the maintain the status quo. 
+ ''')
+
+st.write('''Cold war was used to determine a period of history where, USA and URSS had an increasing geopolitical tension relationship without a straight confrontation, 
+using nuclear arsenal development and conventional military deployment, psychological warfare, propaganda campaigns, espionage, far-reaching embargoes, rivalry at sports events, 
+and technological competitions such as the Space Race.
+ ''')
+
+st.write("""On this atmosphere, became crucial how the messages are said, how to spread widely, and, most important thing, what is the purpose of it. For this reason, the press 
+became a key point as a powerful tool as psychological warfare and propaganda campaigns. As 'Argumentum Ad Verecundiam' press has a relevant position in society, so, it's assumed 
+what's pubblished it's true.
+""")
+         
+
 st.write('## Newspapers analysed')
 st.write('### BBC:')
 st.write('- Hisotry, background of subjetivity')
