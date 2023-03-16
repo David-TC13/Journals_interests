@@ -135,9 +135,10 @@ st.write("""- Overall of words: It's noted a massive significance of China as mo
 st.write('## Conclusions:')
 st.write(""" The first and more relevant conclusion comes from the subjetivity analysis; as it was shown there's overall a significant subjetivity in all the newspapers, without having any outlier. This brings to question if the justitication by the European Union to ban RT to broadcast in this territory.
         On the other side, the Polarity of the articles the keep around 0, which means there messages transmitted are mostly neutral, slightly negative in RT or positive in the case of CNN but, without a great significance.     
-""")
+        """)
 st.write("""The use of words makes a key point in a news, that includes which word to use and what not to use. In this case it's seen how the Eastern Bloc keeps the use of war in a lower profile than military; this follows Vladimir Putin's speech of not being in wa with Ukraine, but, on a military operation to 
  free the East territories in Ukraine. On the other side, it was avoided to use Ukraine as topic with the purpose to see how indirectly this term was appearing as a relation of another one and brings a relevant finding, which is, a high use of the Ukraine associated to any of the four countries used as topic, this bring to the conclusion 
  the main international affair which links all the countries analysed is the war in Ukraine.""")
+st.write(""" Finally it's remarkable the most topics published are Russia and USA, which brings back to the idea of a polarised world with two reference, which are those countries.""")
 st.write('## Disclamer:')
 st.write('This project is being done with specific libraries and an adaptation of a MIT nomenclator, which, in between the availables, are the most reliable. Due to these reasons, the accuracy obtained can be as not precise as the reality; the fact of taking the words out of their context might infer in not accurate conclusions caused by the loss of meaning of the overall article.')
