@@ -29,4 +29,7 @@ df4=df3[(df3['day'] == day)]
 title= st.selectbox('Title', df4['title'])
 df5= df4[df4['title']==title]
 
-st.write(df5.loc[:,['subjetivity','polarity','word','link','source','topic']])
+link=df5['link'].values
+st.write(f"Check the full article:{link}")
+
+st.write(df5.loc[:,['subjetivity','polarity','word','source','topic']])
