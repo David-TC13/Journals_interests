@@ -9,6 +9,11 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 
+st.set_page_config(
+     page_title='Press influences',
+     
+     layout='wide',
+)
 
 st.title('Tableau Graphs')
 st.write("""Here it would be found all the graphs related with the analysis done, which includes averages of subjetivity and polarity, also the max and min value of them,

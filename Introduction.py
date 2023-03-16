@@ -7,7 +7,11 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
-
+st.set_page_config(
+     page_title='Press influences',
+     
+     layout='wide',
+)
 
 
 st.title('Is any geopolitical influence on the press we read around the globe?')
@@ -142,7 +146,7 @@ st.write("""The use of words makes a key point in a news, that includes which wo
  free the East territories in Ukraine. On the other side, it was avoided to use Ukraine as topic with the purpose to see how indirectly this term was appearing as a relation of another one and brings a relevant finding, which is, a high use of the Ukraine associated to any of the four countries used as topic, this bring to the conclusion 
  the main international affair which links all the countries analysed is the war in Ukraine.""")
 st.write(""" Finally it's remarkable the most topics published are Russia and USA, which brings back to the idea of a polarised world with two reference, which are those countries.""")
-st.write('## Disclamer:')
-st.write('This project is being done with specific libraries and an adaptation of a MIT nomenclator, which, in between the availables, are the most reliable. Due to these reasons, the accuracy obtained can be as not precise as the reality; the fact of taking the words out of their context might infer in not accurate conclusions caused by the loss of meaning of the overall article.')
 image = Image.open('pics/wordcloud_press.png')
 st.image(image, caption='wordcloud shaped as reporter')
+st.write('## Disclamer:')
+st.write('This project is being done with specific libraries and an adaptation of a MIT nomenclator, which, in between the availables, are the most reliable. Due to these reasons, the accuracy obtained can be as not precise as the reality; the fact of taking the words out of their context might infer in not accurate conclusions caused by the loss of meaning of the overall article.')
