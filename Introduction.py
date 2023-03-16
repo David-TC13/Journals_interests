@@ -12,8 +12,7 @@ from PIL import Image
 
 st.title('Is any geopolitical influence on the press we read around the globe?')
 
-image = Image.open('pics/wordcloud_press.png')
-st.image(image, caption='wordcloud shaped as reporter')
+
 
 st.write('## Introduction')
 st.write('''After the second world war and the falling of the "Nazi Empire", the world was divided by the Allies in two blocs: on one side, the Western bloc which included USA, UK ,
@@ -44,6 +43,9 @@ st.write("""In this particular case, we decided to use 2 sources from the west b
 To trigger more significance, we checked the news published from the other bloc, in other words, we checked news on BCC and CNN about China and Russia, and vice versa (UK and USA in RT and P's D). To do so,  4 functions were 
 created (one per website) to do webscrapping on each website with Selenium, getting each article content, title and date separed and formatted by day, month and year using BeautifulSoup library in Python. Once this information 
 was obtained if was processed and save into a DF and then saved into a csv file with the format df_<broadcast>_<topic>.csv.""")
+
+image = Image.open('pics/code_shot.png')
+st.image(image, caption='Screenshot of part of a webscrapping function')
          
 st.write("""The following step was to analyse the information obtained. Witht his purpose, it was created another function which checked the subjectivity, polarity and the top 20 words most used in each article. 
 As a result of a research about the Natural Language analysis, it's been decided to create a nomenclator of 'Stopwords', as the one provided by the NLTK library in python was not as accurate as the one used and, at the same time, 
@@ -142,3 +144,5 @@ st.write("""The use of words makes a key point in a news, that includes which wo
 st.write(""" Finally it's remarkable the most topics published are Russia and USA, which brings back to the idea of a polarised world with two reference, which are those countries.""")
 st.write('## Disclamer:')
 st.write('This project is being done with specific libraries and an adaptation of a MIT nomenclator, which, in between the availables, are the most reliable. Due to these reasons, the accuracy obtained can be as not precise as the reality; the fact of taking the words out of their context might infer in not accurate conclusions caused by the loss of meaning of the overall article.')
+image = Image.open('pics/wordcloud_press.png')
+st.image(image, caption='wordcloud shaped as reporter')
