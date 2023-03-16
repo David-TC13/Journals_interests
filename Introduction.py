@@ -114,12 +114,26 @@ image_4 = Image.open('pics/wordcloud_russia.png')
 st.image(image_4, caption="wordcloud shaped RT logo")
 
 st.write('## Findings:')
-st.write("#### Subjetivity: As it's shown in the graph no.")
-st.write('#### Polarity: ')
-st.write('#### Number of publications by newspaper:')
-st.write('#### Recurrent topics:')
-st.write('#### Most used words, difference in between the "two blocks":')
-st.write('#### Overall of words ')
+st.write("#### Subjetivity")
+st.write("""As a result of this analysis can be seen an average of subjetivity by weeks oscilates around 0.35 (on a scale 0-1) which slightly higher in RT, which in week 5 of 2023, reach 0.4, being the second BBC in week 7 of 2023, with an average of 0.38, but, in general the subjetivity
+        found there's not a significant difference in between them.""")
+st.write('#### Polarity')
+
+st.write("""In this case, it can be seen bigger discrepancies in between them; on a scale from -1 to +1, none of them goes above/below 0.1, which means there's not much negativity/positivity inferred in the articles. Even though, in this range of -0.1 to 0.1 we can see the bigger 
+        discrepancies where, for example, RT, is the most negative one (actually, it's the one journal which falls below 0) and CNN the most positive(0.086). """)
+st.write('#### Number of publications by newspaper')
+st.write("""To analyse this parameter it needs to take in consideration the topics used; as the intention of this project is to check how geopolitics cause an impact on their national newspapers, the amount of articles published are related with it; so, 
+        for exmaple, BBC and CNN are counted by the articles published in relation of Russia and China, while, RT and People's Daily the count is done about the articles published in relation of the United Kingdom and United States of America. As a result of this sum, it can be appreciated that, by far, CNN 
+        publishes more articles thant the other about those topics.""")
+st.write('#### Recurrent topics')
+st.write("""In this case, the analysis is focused on the topic most recurrent; mostly, what it's talked more often; in this case, again has to be considered the fact of split the articles in two blocs: Russi/China vs. UK/USA.
+        At this point it's observed the highest amount of articles published are about Russia by the western newspapers, followed by USA. """)
+st.write('#### Most used words, difference in between the "two blocs"')
+st.write("""- East Bloc: Checking the graphs in tableau it's a clear the most often word is China followed by United and States that, as a compound name, would be the second word most used in the eastern newspapers. 
+         Noted also the use of the term Ukraine, Russia and military as relevant words vs. war appears far lower times (39 times vs. military 79). """)
+st.write("""- West Bloc: In this case China and Russia are the most notorious words used, as expected, followed closely by Ukraine. Also noted the term war is used wore often (196 times). Also relevante the amount of times shown the word Putin (100 times vs 19 on the Easter bloc)
+         """)
+st.write("""- Overall of words: It's noted a massive significance of China as it's been the most recurrent in both blocs, followed by Ukraine, Russia, United and war. Also relevant of this last word (war) which is used more often than military overall.""")
 
 st.write('## Conclusions:')
 
