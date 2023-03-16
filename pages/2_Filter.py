@@ -21,10 +21,12 @@ st.title('Filtering news, what do you want to read today?')
 df=pd.read_csv('data/dfcomplete.csv')
 
 year = st.selectbox('year', df['year'].unique())
-month = st.selectbox('month', df['month'].unique())
-day = st.selectbox('day', df['day'].unique())
-df2 = df[(df['year'] == year) & (df['month'] == month) & (df['day'] == day) ]
-title= st.selectbox('Title', df2['title'])
-df3= df2[df2['title']==title]
+df2 = df[(df['year'] == year)]
+month = st.selectbox('month', df2['month'].unique())
+df3= df2[(df2['month'] == month)]
+day = st.selectbox('day', df3['day'].unique())
+df4=df3[(df3['day'] == day)]
+title= st.selectbox('Title', df4['title'])
+df5= df4[df4['title']==title]
 
-st.write(df3.loc[:,['subjetivity','polarity','word','link','source','topic']])
+st.write(df5.loc[:,['subjetivity','polarity','word','link','source','topic']])
