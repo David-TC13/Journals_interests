@@ -73,7 +73,7 @@ def preprocess(df_raw):
         blob = TextBlob(raw)
         subj = blob.sentiment.subjectivity
         list_subj.append(subj)
-    dict_subj={'subjetivity':list_subj}
+    dict_subj={'subjectivity':list_subj}
 
     df_subj=pd.DataFrame(dict_subj)
     df_proc=pd.merge(df_proc,df_subj, left_index=True,  right_index=True)

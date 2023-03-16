@@ -32,4 +32,4 @@ df5= df4[df4['title']==title]
 link=df5['link'].values
 st.write(f"Check the full article:{link}")
 
-st.write(df5.loc[:,['subjetivity','polarity','word','source','topic']])
+st.write(df5.loc[:,['subjectivity','polarity','word','source','topic']])
