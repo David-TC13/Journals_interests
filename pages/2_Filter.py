@@ -27,4 +27,4 @@ df2 = df[(df['year'] == year) & (df['month'] == month) & (df['day'] == day) ]
 title= st.selectbox('Title', df2['title'])
 df3= df2[df2['title']==title]
 
-st.write(df3.loc[:,['article','source','topic','subjetivity','polarity','word','link']])
+st.write(df3.loc[:,['subjetivity','polarity','word','link','source','topic']])
