@@ -16,8 +16,8 @@ image = Image.open('pics/wordcloud_press.png')
 st.image(image, caption='wordcloud shaped as reporter')
 
 st.write('## Introduction')
-st.write('''After the second world war, the world ended up split into two main blocs; after falling the "Nazi Empire", the world was divided by the Allies in two blocs:
-         on one side, the Western bloc which included USA, UK , and, on the other side the Eastern bloc which included most of the communist countries at the time.
+st.write('''After the second world war and the falling of the "Nazi Empire", the world was divided by the Allies in two blocs: on one side, the Western bloc which included USA, UK ,
+        and, on the other side the Eastern bloc which included most of the communist countries at the time.
          ''')
 st.write('''Just after this division,particulary noted in the city of Berlin, the tensions were raised in between both blocs; the creation of the NATO as a containment for 
 the Soviet influence is considered the starting point of what was called the Cold War; as counterpart, the URSS created the Warsaw Pact in order the maintain the status quo. 
@@ -28,16 +28,14 @@ using nuclear arsenal development and conventional military deployment, psycholo
 and technological competitions such as the Space Race.
  ''')
 
-st.write("""On this atmosphere, became crucial how the messages are said, how to spread widely, and, most important thing, what is the purpose of it. For this reason, the press 
-became a key point as a powerful tool as psychological warfare and propaganda campaigns. As 'Argumentum Ad Verecundiam' press has a relevant position in society, so, it's assumed 
-what's pubblished it's true.
-""")
+st.write("""On this atmosphere, it became crucial how messages are expressed, how to spread widely, and, most important thing, what is the purpose of them. For this reason, the press 
+became a key point and a powerful tool for psychological warfare and propaganda campaigns. As 'Argumentum Ad Verecundiam' press has a relevant position in society, so, it's assumed 
+what's pubblished it's true.""")
 
-st.write("""Ultimately, this relevance is the cause of the governments and private institutions interest to influence on what they publish or what to ommit. One recent example can be seen
-        during the russian invasion of Ukraine, which, it was considered by the European Union russian press like RT or Sputnik agencies for misinforming the population and, for this reason
-        they were banned to broadcast in Europe. As and immediate consequence of this decision brought this project to a extra scope, which was to find the way to get the information from 
-        this broadcast agency (RT) and evaluate if that was true, standarising some parameters and comparing them between the Western broadcast agencies, as well. For this reason, one of the
-         main challenges has been to managed to 'bypass' this prohibition, trying to find a proper tool to reach it, by using a VPN based on Japan.""")         
+st.write("""Ultimately, this relevance is the reason of the governments and private institutions interest to influence what they publish or what to ommit. One recent example can be, during the russian invasion of Ukraine, how the
+         European Union considered press like RT or Sputnik agencies as misinforming mediums for the population and, for this reason they were banned to broadcast in Europe.
+         As consequence of this decision during this project had to be implemented new features not contemplated at the beginning, as a VPN to "bypass" this prohibition, in order to find the way to get the information from 
+        this broadcast agency (RT) and evaluate if that was true, standarising some parameters and comparing them between the Western broadcast agencies.""")         
 
 st.write('## Methods')
 st.write("""To analyse the influence that a government or an entity can provoke a partial news we decided to take 4 different broadcast from different locations which can be meaningful in order
