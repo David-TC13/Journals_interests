@@ -56,14 +56,7 @@ It's also to include in the description the use of selenium to scroll down on th
         lst_bbc        = [lnk.get_attribute('href') for lnk in lnks]
         lst_bbc_       = [url for url in lst_bbc if '/news/' in url and '/help' not in url and '/live/' not in url]
         
-        try:
-            more_button = driver.find_element(By.LINK_TEXT, 'next page')
-            driver.execute_script("arguments[0].scrollIntoView();",more_button)
-            more_button.click()
-            
-        except:
-            break
-
+       
         for i in lst_bbc_:
             link_lst.append(i)
 
@@ -76,6 +69,8 @@ It's also to include in the description the use of selenium to scroll down on th
             soup = BeautifulSoup(html.content, "html.parser")
             article=soup.getText().replace('\'', "´").strip()
             article = article[:article.find('More on this story')]
+            article = article[article.find('pageCopy linkAbout sharing'):]
+            article=article.replace ('pageCopy linkAbout sharing','')
             title = soup.title.string
             list_soup.append(article)
             list_title.append(title)
@@ -98,8 +93,13 @@ It's also to include in the description the use of selenium to scroll down on th
             month_list.append(month)
             year_list.append(year)
 
+        try:
+                more_button = driver.find_element(By.LINK_TEXT, 'next page')
+                driver.execute_script("arguments[0].scrollIntoView();",more_button)
+                more_button.click()
 
-
+        except:
+            break
 
     dict_bbc={'title': list_title,
             'article': list_soup,
