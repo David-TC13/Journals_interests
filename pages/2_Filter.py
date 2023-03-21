@@ -4,6 +4,7 @@
 # In[ ]:
 
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 import numpy as np
 from PIL import Image
@@ -29,8 +30,10 @@ df4=df3[(df3['day'] == day)]
 title= st.selectbox('Title', df4['title'])
 df5= df4[df4['title']==title]
 
-link=df5['link'].values
-link_value=str(link)
+link=df5['link'].values[0]
+
 st.write(f"Check the full article:{link}")
 
+
 st.write(df5.loc[:,['subjectivity','polarity','word','source','topic']])
+components.iframe(link,scrolling=True, height=500)
