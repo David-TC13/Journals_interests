@@ -93,13 +93,6 @@ def preprocess(df_raw):
 
 # In[3]:
 
-def add_column(df,name,string):
-    """ With this function is created a new column with the dataframe selected and introduce the source as string to then be easier the visualisation"""
-    df[name]= string
-    return df
-
-# In[4]:
-
 def list_words(df):
     """This function returns the column word from the DF as a new DF which gonna return a single column with all the words to be used after for visualisation""" 
     lists_wds=df['word'].tolist()
