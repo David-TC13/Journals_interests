@@ -99,6 +99,7 @@ def keyword(word,no_news):
                  'month': month_list,
                  'year': year_list}
         df_cnn=pd.DataFrame(dict_cnn)
+        df_cnn.drop_duplicates(inplace=True)
         driver.close()
 
         return df_cnn

@@ -121,6 +121,7 @@ def keyword(word, no_news):
              'year':year_list
                 }
         df_cn= pd.DataFrame(dict_pc)
+        df_cn.drop_duplicates(inplate=True)
         driver.close()
    
         return df_cn

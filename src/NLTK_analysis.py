@@ -58,7 +58,7 @@ def preprocess(df_raw):
         sorted_words = sorted(word_freq.items(), key=lambda x: x[1], reverse=True)
 
         list_word = []
-        for word, freq in sorted_words[:20]:
+        for word, freq in sorted_words[:10]:
             list_word.append(word)
         dict_word={'word':list_word}
 

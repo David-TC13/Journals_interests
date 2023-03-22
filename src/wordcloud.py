@@ -16,7 +16,7 @@ def wordcloud(df,file):
     words=[word for txt in df['word'] for word in txt]
     text = ' '.join(words)
     mask = np.array(Image.open(f"pics/{file}"))
-    wordcloud = WordCloud(width=1000, height=800, background_color='white',mask=mask,contour_width=1, contour_color='gray').generate(text)
+    wordcloud = WordCloud(width=1000, height=800, background_color='black',mask=mask,contour_width=1, contour_color='gray').generate(text)
     plt.figure(figsize=(8,10))
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis('off')

@@ -113,9 +113,11 @@ def keyword(word,no_news):
             'Nov': 11,
             'Dec': 12 }
         df['month'] = df['month'].map(month_map)
+        df.drop_duplicates(inplace=True)
         driver.close()
         return df
     
     except:
+
         pass
 

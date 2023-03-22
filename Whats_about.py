@@ -51,7 +51,7 @@ was obtained if was processed and save into a DF and then saved into a csv file 
 image = Image.open('pics/code_shot.png')
 st.image(image, caption='Screenshot of part of a webscrapping function')
          
-st.write("""The following step was to analyse the information obtained. Witht his purpose, it was created another function which checked the subjectivity, polarity and the top 20 words most used in each article. 
+st.write("""The following step was to analyse the information obtained. Witht his purpose, it was created another function which checked the subjectivity, polarity and the top 10 words most used in each article. 
 As a result of a research about the Natural Language analysis, it's been decided to create a nomenclator of 'Stopwords', as the one provided by the NLTK library in python was not as accurate as the one used and, at the same time, 
 the fact that a word considered meaningful, in the context analysed could be considered as 'Stopword' (i.e. news). """)
 st.write("""In this second step of the analysis process, it's been also transforming the data to have it ready for visualisation; in order to do it, the date of each article was compiled back again in the format dd/mm/yyyy, in 

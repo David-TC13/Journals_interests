@@ -108,6 +108,7 @@ It's also to include in the description the use of selenium to scroll down on th
              'month': month_list,
              'year': year_list}
     df=pd.DataFrame(dict_bbc)
+    df.drop_duplicates(inplace=True)
     driver.close()
     return df
 
