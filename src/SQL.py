@@ -72,9 +72,8 @@ def to_sql(df, table, engine):
 # In[55]:
 
 
-def drop_opinion(table):
-    df=pd.read_sql_query(f"""SELECT *
-                            FROM {table}
-                            WHERE title not REGEXP 'Opinion';""",engine)
-    return df
+def drop_op_less_2023(table,engine):
+    pd.read_sql_query(f"""DELETE FROM {table} WHERE title  like "^Opinion";
+    SELECT * FROM {table};""",engine)
+    return 
 
