@@ -66,12 +66,13 @@ def preprocess(df_raw):
 
 
     df_words=pd.DataFrame(dict_words).T
+    df_words['word'] = df_words['word'].map(lambda x: ','.join(x))
     df_proc=pd.merge(df_raw,df_words, left_index=True,  right_index=True)
     
     list_subj=[]
     for raw in df_raw['article']:
         blob = TextBlob(raw)
-        subj = blob.sentiment.subjectivity
+        subj = round(blob.sentiment.subjectivity,3)
         list_subj.append(subj)
     dict_subj={'subjectivity':list_subj}
 
@@ -81,7 +82,7 @@ def preprocess(df_raw):
     list_polar=[]
     for raw in df_raw['article']:
         blob = TextBlob(raw)
-        polar = blob.sentiment.polarity
+        polar = round(blob.sentiment.polarity,3)
         list_polar.append(polar)
     dict_polar={'polarity':list_polar}
 

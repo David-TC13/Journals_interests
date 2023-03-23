@@ -13,6 +13,7 @@ import matplotlib.pyplot as plt
 
 def wordcloud(df,file):
     """This function creates a wordcloud of a specific DF and with a specific shape"""
+    df['word'] = df['word'].str.split(',')
     words=[word for txt in df['word'] for word in txt]
     text = ' '.join(words)
     mask = np.array(Image.open(f"pics/{file}"))
