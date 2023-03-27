@@ -9,21 +9,20 @@ import pandas as pd
 import os
 from dotenv import load_dotenv
 
-def query_2023(table,engine):
-    df=pd.read_sql_query(f""" SELECT * FROM {table}
-    WHERE year>2022""", engine).drop(columns=['index'])
-    return df
-
 def to_sql(df, table, engine):
-    df.to_sql(f'{table}', engine, if_exists='replace',index=True)
+    df.to_sql(f'{table}', engine, if_exists='append',index=False)
     return
 
-def drop_opinion(table,engine):
-    df=pd.read_sql_query(f"""SELECT * FROM {table} 
-                         WHERE title NOT REGEXP 'Opinion';""",engine).drop(columns=['index'])
+def drop_opinion_year(table,engine):
+    df=pd.read_sql_query(f"""SELECT DISTINCT * FROM {table}
+                    WHERE title NOT REGEXP 'Opinion' and year>2022;""",engine)
     return df
 
 def uploading_to_sql(df, table, engine):
-    df.to_sql(table,engine, if_exists='replace',index=True)
+    df.to_sql(f'{table}',engine, if_exists='append',index=False)
     return 
 
+
+def replace_to_sql(df, table, engine):
+    df.to_sql(f'{table}',engine, if_exists='replace',index=False)
+    return 
