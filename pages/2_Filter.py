@@ -3,13 +3,10 @@
 
 # In[ ]:
 
-import pymysql
-import sqlalchemy as alch 
 from getpass import getpass
 import pandas as pd
 
-import os
-from dotenv import load_dotenv
+
 
 import streamlit as st
 import streamlit.components.v1 as components
@@ -17,14 +14,6 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 
-load_dotenv()
-
-password = os.getenv("password")
-username = os.getenv("user")
-server   = os.getenv('server')
-dbName   = os.getenv('dbName')
-connectionData=f"mysql+pymysql://{username}:{password}@{server}/{dbName}"
-engine   = alch.create_engine(connectionData)
 
 st.set_page_config(
      page_title='Press influences',
@@ -34,16 +23,7 @@ st.set_page_config(
 
 
 st.title('Filtering news, what do you want to read today?')
-
-df_bbc=pd.read_sql_query(f""" SELECT * FROM bbc""", engine)
-df_cnn=pd.read_sql_query(f""" SELECT * FROM cnn""", engine)
-df_pd= pd.read_sql_query(f""" SELECT * FROM people""", engine)
-df_rt=pd.read_sql_query(f""" SELECT * FROM RT""", engine)
-
-
-
-df = pd.concat([df_bbc,df_cnn,df_pd,df_rt])
-
+df=pd.read_csv('data/df_together.csv')
 
 year = st.selectbox('Year', sorted(df['year'].unique()))
 df2 = df[(df['year'] == year)]
