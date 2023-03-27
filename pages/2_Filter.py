@@ -3,10 +3,13 @@
 
 # In[ ]:
 
+import pymysql
+import sqlalchemy as alch 
 from getpass import getpass
 import pandas as pd
 
-
+import os
+from dotenv import load_dotenv
 
 import streamlit as st
 import streamlit.components.v1 as components
@@ -23,7 +26,9 @@ st.set_page_config(
 
 
 st.title('Filtering news, what do you want to read today?')
+
 df=pd.read_csv('data/df_together.csv')
+
 
 year = st.selectbox('Year', sorted(df['year'].unique()))
 df2 = df[(df['year'] == year)]
